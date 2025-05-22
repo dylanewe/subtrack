@@ -25,3 +25,37 @@ export const getUser = async (req, res, next) => {
         next(error)
     }
 }
+
+export const updateUser = async (req, res, next) => {
+    try{
+        const updatedUser = await User.findByIdAndUpdate(req.params.id, {
+            ...req.body,
+        })
+
+        if(!updatedUser){
+            const error = new Error('User not found');
+            error.statusCode = 404;
+            throw error;
+        };
+
+        res.status(200).json({ success: true, data: updatedUser });
+    }catch(e){
+        next(e);
+    }
+}
+
+export const deleteUser = async (req, res, next) => {
+    try{
+        const deletedUser = await User.findByIdAndDelete(req.params.id);
+
+        if(!deletedUser){
+            const error = new Error('User not found.');
+            error.status = 404;
+            throw error;
+        }
+
+        res.status(200).json({ success: true, data: deletedUser });
+    }catch(e){
+        next(e);
+    }
+}
