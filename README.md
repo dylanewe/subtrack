@@ -96,9 +96,7 @@ PORT=3000
 NODE_ENV=development
 
 # Database
-MONGODB_URI=mongodb://localhost:27017/subscription-tracker
-# Or for MongoDB Atlas:
-# MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/subscription-tracker
+MONGODB_URI=mongodb-uri
 
 # JWT Authentication
 JWT_SECRET=your-super-secret-jwt-key
