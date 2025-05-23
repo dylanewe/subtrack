@@ -159,6 +159,8 @@ subtrack/
 │   ├── subscription.controller.js # Subscription CRUD operations
 │   ├── user.controller.js         # User CRUD operations
 │   └── workflow.controller.js     # Automated email logic
+├── database/
+│   └── mongodb.js              # MongoDB logic
 ├── routes/
 │   ├── auth.routes.js          # Authentication routes
 │   ├── subscription.routes.js  # Subscription routes
