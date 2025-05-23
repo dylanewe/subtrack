@@ -150,26 +150,33 @@ curl http://localhost:3000/api/health
 ## 📁 Project Structure
 
 ```
-subscription-tracker-api/
+subtrack/
 ├── models/
-│   ├── subscription.model.js    # Subscription schema
+│   ├── subscription.model.js   # Subscription schema
 │   └── user.model.js           # User schema
 ├── controllers/
-│   ├── auth.controller.js      # Authentication logic
-│   └── subscription.controller.js  # Subscription CRUD operations
+│   ├── auth.controller.js         # Authentication logic
+│   ├── subscription.controller.js # Subscription CRUD operations
+│   ├── user.controller.js         # User CRUD operations
+│   └── workflow.controller.js     # Automated email logic
 ├── routes/
 │   ├── auth.routes.js          # Authentication routes
-│   └── subscription.routes.js  # Subscription routes
+│   ├── subscription.routes.js  # Subscription routes
+│   ├── user.routes.js          # User routes
+│   └── workflow.routes.js      # Workflow routes
 ├── middleware/
+│   ├── arcjet.middleware.js    # Arcjet security
 │   ├── auth.middleware.js      # JWT verification
-│   └── security.middleware.js  # Arcjet security
-├── workflows/
-│   └── email.workflow.js       # Email automation workflows
+│   └── error.middleware.js     # Error checks
 ├── utils/
-│   ├── email.js               # Email utilities
-│   └── constants.js           # Application constants
+│   ├── email-template.js      # Email templates
+│   └── send-email.js          # Email logic
 ├── .env                       # Environment variables
 ├── app.js                     # Main application file
+├── arcjet.js                  # Arcjet file
+├── env.js                     # Environment file
+├── nodemailer.js              # Nodemailer file
+├── upstash.js                 # Upstash file
 └── package.json               # Dependencies and scripts
 ```
 
